@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kate Andersen Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-pro-text">
+    <style>
+        .project-tab a {
+            display: block;  /* Makes the link fill the entire tab */
+            text-decoration: none;  /* Removes underline */
+            color: inherit;  /* Inherits text color from parent */
+            width: 100%;
+            height: 100%;
+            position: relative;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main class="main">
+        <div class="container">
+            <div class="project-nav">
+                <div class="nav-controls">
+                    <a href="all.html" class="show-all-btn" role="button" aria-label="Show all projects">Show All Projects</a>
+                    <label class="theme-switch" aria-label="Toggle dark mode">
+                        <input type="checkbox" id="theme-toggle" aria-checked="false">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                
+                <div class="nav-header">
+                    <div class="logo-mark">KA</div>
+                    <h1 class="logo">KATE ANDERSEN</h1>
+                    <p class="title">Designer</p>
+                </div>
+
+                <div class="project-list">
+                    <div class="project-tab" data-project="about" 
+                         tabindex="0" 
+                         role="button"
+                         aria-label="About Kate Andersen">
+                        <div class="tab-header">
+                            <h2>About</h2>
+                            <div class="tab-categories">
+                                <span>Show More</span>
+                            </div>
+                        </div>
+                        <p class="tab-title">Kate Andersen</p>
+                        <p class="tab-description">A Tampa Bay-based designer, Kate crafts future-focused designs with a deep commitment to social impact.</p>
+                    </div>
+
+                    <div class="project-tab" data-project="project1" 
+                         tabindex="0" 
+                         role="button"
+                         aria-label="Graphic Design project: Tampa Bay Watch">
+                        <div class="tab-header">
+                            <h2>Graphic Design</h2>
+                            <div class="tab-categories">
+                                <span>Signage</span>
+                                <span>Motion</span>
+                            </div>
+                        </div>
+                        <p class="tab-title">Tampa Bay Watch</p>
+                        <p class="tab-description">An entirely new visual identity for an iconic non-profit organization.</p>
+                    </div>
+
+                    <div class="project-tab" data-project="project2" 
+                         tabindex="0" 
+                         role="button"
+                         aria-label="Digital Design project: Smart Home Interface">
+                        <div class="tab-header">
+                            <h2>Digital Design</h2>
+                            <div class="tab-categories">
+                                <span>UX/UI</span>
+                                <span>Brand Identity</span>
+                            </div>
+                        </div>
+                        <p class="tab-title">Smart Home Interface</p>
+                        <p class="tab-description">Intuitive interface design for connected home devices.</p>
+                    </div>
+
+                    <div class="project-tab" data-project="project3" 
+                         tabindex="0" 
+                         role="button"
+                         aria-label="Industrial Design project: Sustainable Furniture Collection">
+                        <div class="tab-header">
+                            <h2>Industrial Design</h2>
+                            <div class="tab-categories">
+                                <span>Sustainable</span>
+                                <span>Furniture</span>
+                            </div>
+                        </div>
+                        <p class="tab-title">Sustainable Furniture Collection</p>
+                        <p class="tab-description">Eco-friendly furniture line using recycled materials.</p>
+                    </div>
+
+                    <div class="project-tab" data-project="project4" 
+                         onclick="window.open('https://kaseander.com/', '_blank')" 
+                         tabindex="0" 
+                         role="button"
+                         aria-label="Web Design project: KASE Ander"
+                         onkeypress="if(event.key==='Enter') window.open('https://kaseander.com/', '_blank')">
+                        <div class="tab-header">
+                            <h2>Web Design</h2>
+                            <div class="tab-categories">
+                                <span>Archive</span>
+                            </div>
+                        </div>
+                        <p class="tab-title">KASE Ander</p>
+                        <p class="tab-description">An archive of objects and photos that tell a story.</p>
+                    </div>
+
+                    <div class="project-tab" data-project="project5" 
+                         tabindex="0" 
+                         role="button"
+                         aria-label="Brand Strategy project: Tech Startup Identity">
+                        <div class="tab-header">
+                            <h2>Brand Strategy</h2>
+                            <div class="tab-categories">
+                                <span>Tech</span>
+                                <span>Startup</span>
+                            </div>
+                        </div>
+                        <p class="tab-title">Tech Startup Identity</p>
+                        <p class="tab-description">Complete brand identity system for an emerging AI technology company.</p>
+                    </div>
+
+                    <div class="project-tab" data-project="project6" 
+                         tabindex="0" 
+                         role="button"
+                         aria-label="Package Design project: Luxury Cosmetics Line">
+                        <div class="tab-header">
+                            <h2>Package Design</h2>
+                            <div class="tab-categories">
+                                <span>Luxury</span>
+                                <span>Cosmetics</span>
+                            </div>
+                        </div>
+                        <p class="tab-title">Luxury Cosmetics Line</p>
+                        <p class="tab-description">Sustainable packaging design for high-end beauty products.</p>
+                    </div>
+
+                    <div class="project-tab" data-project="project7" 
+                         tabindex="0" 
+                         role="button"
+                         aria-label="Environmental Design project: Museum Exhibition">
+                        <div class="tab-header">
+                            <h2>Environmental Design</h2>
+                            <div class="tab-categories">
+                                <span>Museum</span>
+                                <span>Exhibition</span>
+                            </div>
+                        </div>
+                        <p class="tab-title">Museum Exhibition</p>
+                        <p class="tab-description">Interactive space design for contemporary art exhibition.</p>
+                    </div>
+
+                    <div class="project-tab" data-project="project8" 
+                         onclick="window.open('https://kaseander.com/motion', '_blank')" 
+                         tabindex="0" 
+                         role="button"
+                         aria-label="Motion Design project: Brand Animation Series"
+                         onkeypress="if(event.key==='Enter') window.open('https://kaseander.com/motion', '_blank')">
+                        <div class="tab-header">
+                            <h2>Motion Design</h2>
+                            <div class="tab-categories">
+                                <span>Brand</span>
+                                <span>Animation</span>
+                            </div>
+                        </div>
+                        <p class="tab-title">Brand Animation Series</p>
+                        <p class="tab-description">Dynamic motion graphics system for brand communications.</p>
+                    </div>
+
+                    <div class="project-tab" data-project="project9" 
+                         tabindex="0" 
+                         role="button"
+                         aria-label="Editorial Design project: Art Magazine Layout">
+                        <div class="tab-header">
+                            <h2>Editorial Design</h2>
+                            <div class="tab-categories">
+                                <span>Art</span>
+                                <span>Magazine</span>
+                            </div>
+                        </div>
+                        <p class="tab-title">Art Magazine Layout</p>
+                        <p class="tab-description">Contemporary art publication featuring innovative typography and layouts.</p>
+                    </div>
+
+                    <div class="project-tab" data-project="project10" 
+                         tabindex="0" 
+                         role="button"
+                         aria-label="Web Design project: E-commerce Platform">
+                        <div class="tab-header">
+                            <h2>Web Design</h2>
+                            <div class="tab-categories">
+                                <span>E-commerce</span>
+                                <span>Platform</span>
+                            </div>
+                        </div>
+                        <p class="tab-title">E-commerce Platform</p>
+                        <p class="tab-description">User-centered design for a luxury fashion retail platform.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="project" id="about">
+                    <div class="about-container">
+                        <div class="about-image">
+                            <div class="slideshow">
+                                <figure class="slide fade active">
+                                    <img src="images/about/profile1.jpg" alt="Kate Andersen">
+                                </figure>
+                                <figure class="slide fade">
+                                    <img src="images/about/profile2.jpg" alt="Kate Andersen">
+                                </figure>
+                                <figure class="slide fade">
+                                    <img src="images/about/profile3.jpg" alt="Kate Andersen">
+                                </figure>
+                                
+                                <!-- Navigation dots -->
+                                <div class="slideshow-dots">
+                                    <span class="dot active" onclick="currentSlide(1)"></span>
+                                    <span class="dot" onclick="currentSlide(2)"></span>
+                                    <span class="dot" onclick="currentSlide(3)"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="about-intro">
+                            <p class="about-text">Kate Andersen is a Tampa Bay-based designer with a dynamic background in branding, motion, digital, web, and exhibition design. Since launching her career in 2022, Kate has focused on crafting thoughtful, impact-driven work for environmental nonprofits and earth-conscious brands.</p>
+                            <br>
+                            <p class="about-text">Her designs are inspired by a passion for modern design and the natural sciences, fostering collaborations that bridge these fields. Beyond her professional practice, Kate has begun to explore the potential of bio-materials, transforming food waste and other biodegradable resources into sustainable product prototypes.</p>
+                        </div>
+                        
+                        <div class="about-details">
+                            <div class="about-section">
+                                <h3>Clients & Experience</h3>
+                                <ul>
+                                    <li>Florida State University</li>
+                                    <li>Tampa Bay Watch</li>
+                                    <li>Eckerd College</li>
+                                    <li>Boyd Industries</li>
+                                    <li>Bee & Blume</li>
+                                    <li>Yacht StarShip</li>
+                                    <li>Nothing New Collective</li>
+                                    <li>Animas Vestras</li>
+                                    <li>The Pollinator Shop</li>
+                                    <li>DWF Magazine</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="about-section">
+                                <h3>Services</h3>
+                                <ul>
+                                    <li>Brand Strategy</li>
+                                    <li>Visual Identity</li>
+                                    <li>Digital Design</li>
+                                    <li>Art Direction</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="about-section">
+                                <h3>Contact</h3>
+                                <p>info@kateander.com</p>
+                                <p>Tampa Bay, FL</p>
+                                <p><a href="files/KateAndersen_Resume.pdf" download>Download CV</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project" id="project1">
+                    <div class="project-images">
+                        <div class="intro-container">
+                            <figure>
+                                <img src="images/project1/nike1.jpg" alt="Nike campaign visual">
+                            </figure>
+                            <div class="project-intro">
+                                <h2>Tampa Bay Watch</h2>
+                                <p>As Graphic Designer, I helped facilitate an entirely new visual identity.</p>
+                            </div>
+                        </div>
+                        
+                        <figure>
+                            <img src="images/project1/nike2.jpg" alt="Nike campaign typography">
+                        </figure>
+                        
+                        <div class="project-details">
+                            <p>A comprehensive brand identity system developed for Nike's international marketing initiative. The campaign focuses on creating a cohesive visual language that translates across multiple touchpoints and cultural contexts.</p>
+                        </div>
+                        
+                        <figure>
+                            <img src="images/project1/nike3.jpg" alt="Nike campaign applications">
+                        </figure>
+                    </div>
+                </div>
+                <div class="project" id="project2">
+                    <div class="project-header">
+                        <h1>Smart Home Interface</h1>
+                        <p>User interface design for an innovative smart home control system.</p>
+                    </div>
+                    <div class="project-images">
+                        <figure>
+                            <img src="images/project2/smart-home1.jpg" alt="Interface design">
+                        </figure>
+                        <figure>
+                            <img src="images/project2/smart-home2.jpg" alt="User flow">
+                        </figure>
+                        <figure>
+                            <img src="images/project2/smart-home3.jpg" alt="Mobile application">
+                        </figure>
+                    </div>
+                </div>
+                
+                <div class="project" id="project3">
+                    <div class="project-header">
+                        <h1>Sustainable Furniture Collection</h1>
+                        <p>A series of eco-friendly furniture pieces designed for modern living.</p>
+                    </div>
+                    <div class="project-images">
+                        <figure>
+                            <img src="images/project3/furniture1.jpg" alt="Furniture piece 1">
+                        </figure>
+                        <figure>
+                            <img src="images/project3/furniture2.jpg" alt="Furniture piece 2">
+                        </figure>
+                        <figure>
+                            <img src="images/project3/furniture3.jpg" alt="Production process">
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="project" id="project5">
+                    <div class="project-header">
+                        <h1>Tech Startup Identity</h1>
+                        <p>Brand strategy and visual identity for an emerging tech company.</p>
+                    </div>
+                    <div class="project-images">
+                        <figure>
+                            <img src="images/project5/tech1.jpg" alt="Brand identity">
+                        </figure>
+                        <figure>
+                            <img src="images/project5/tech2.jpg" alt="Logo system">
+                        </figure>
+                        <figure>
+                            <img src="images/project5/tech3.jpg" alt="Applications">
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="project" id="project6">
+                    <div class="project-header">
+                        <h1>Luxury Cosmetics Line</h1>
+                        <p>Package design for a high-end cosmetics brand.</p>
+                    </div>
+                    <div class="project-images">
+                        <figure>
+                            <img src="images/project6/cosmetics1.jpg" alt="Cosmetics package design">
+                        </figure>
+                        <figure>
+                            <img src="images/project6/cosmetics2.jpg" alt="Product packaging">
+                        </figure>
+                        <figure>
+                            <img src="images/project6/cosmetics3.jpg" alt="Brand logo">
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="project" id="project7">
+                    <div class="project-header">
+                        <h1>Museum Exhibition</h1>
+                        <p>Environmental design for a museum exhibition.</p>
+                    </div>
+                    <div class="project-images">
+                        <figure>
+                            <img src="images/project7/museum1.jpg" alt="Museum exhibition design">
+                        </figure>
+                        <figure>
+                            <img src="images/project7/museum2.jpg" alt="Exhibition layout">
+                        </figure>
+                        <figure>
+                            <img src="images/project7/museum3.jpg" alt="Interactive elements">
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="project" id="project8">
+                    <div class="project-header">
+                        <h1>Brand Animation Series</h1>
+                        <p>Motion design for a brand animation series.</p>
+                    </div>
+                    <div class="project-media">
+                        <figure class="image-container">
+                            <img src="media/project8/images/brand1.jpg" alt="Brand design">
+                        </figure>
+                        
+                        <figure class="animation-container">
+                            <img src="media/project8/animations/logo-animation.gif" alt="Animated logo">
+                        </figure>
+                        
+                        <figure class="video-container">
+                            <video controls>
+                                <source src="media/project8/videos/brand-motion.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="project" id="project9">
+                    <div class="project-header">
+                        <h1>Art Magazine Layout</h1>
+                        <p>Editorial design for an art magazine layout.</p>
+                    </div>
+                    <div class="project-images">
+                        <figure>
+                            <img src="images/project9/magazine1.jpg" alt="Magazine layout">
+                        </figure>
+                        <figure>
+                            <img src="images/project9/magazine2.jpg" alt="Article layout">
+                        </figure>
+                        <figure>
+                            <img src="images/project9/magazine3.jpg" alt="Cover design">
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="project" id="project10">
+                    <div class="project-header">
+                        <h1>E-commerce Platform</h1>
+                        <p>Web design for an e-commerce platform.</p>
+                    </div>
+                    <div class="project-images">
+                        <figure>
+                            <img src="images/project10/ecommerce1.jpg" alt="E-commerce platform homepage">
+                        </figure>
+                        <figure>
+                            <img src="images/project10/ecommerce2.jpg" alt="Product page design">
+                        </figure>
+                        <figure>
+                            <img src="images/project10/ecommerce3.jpg" alt="Checkout process">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <div class="loader"></div>
+</body>
+</html> 
