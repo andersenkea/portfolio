@@ -24,6 +24,29 @@ function showSlides(n) {
     dots[slideIndex-1].className += " active";
 }
 
+// Move handleImageError function outside of any event listeners
+function handleImageError(img) {
+    console.log('Image failed:', img.src);
+    const figure = img.closest('figure');
+    if (figure) {
+        // Style the figure container
+        figure.style.backgroundColor = '#f0f0f0';
+        figure.style.position = 'relative';
+        figure.style.minHeight = '200px'; // Add minimum height
+        
+        // Hide the broken image
+        img.style.display = 'none';
+        
+        // Add error message
+        const errorMessage = document.createElement('div');
+        errorMessage.className = 'error-message';
+        errorMessage.textContent = 'Image Not Available';
+        figure.appendChild(errorMessage);
+        
+        console.log('Error handler applied to:', figure);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const projectTabs = document.querySelectorAll('.project-tab');
     const projects = document.querySelectorAll('.project');
@@ -250,36 +273,26 @@ setInterval(updateESTTime, 1000);
         updateProgressBar();
     }
 
-    // Remove all existing error handling code and replace with this:
-    document.addEventListener('DOMContentLoaded', () => {
-        // Basic error handler test
-        function handleImageError(img) {
-            console.log('Test 1 - Image failed:', img.src);
+    // Attach error handlers to all images
+    document.querySelectorAll('img').forEach(img => {
+        img.onerror = () => handleImageError(img);
+    });
+
+    // Add loading state to all figures
+    document.querySelectorAll('figure').forEach(figure => {
+        figure.classList.add('figure-loading');
+    });
+
+    // Handle image load events
+    document.querySelectorAll('img').forEach(img => {
+        img.onload = () => {
             const figure = img.closest('figure');
             if (figure) {
-                console.log('Found figure element');
-                figure.style.backgroundColor = '#f0f0f0';
-                img.style.display = 'none';
-            } else {
-                console.log('No figure element found');
+                figure.classList.remove('figure-loading');
             }
-        }
-
-        // Find first project image and test with it
-        const firstImage = document.querySelector('.project-images img');
-        if (firstImage) {
-            console.log('Found test image:', firstImage.src);
-            firstImage.onerror = () => {
-                console.log('Error event triggered');
-                handleImageError(firstImage);
-            };
-            
-            // Force an error by changing src
-            console.log('Changing image src to trigger error');
-            firstImage.src = 'nonexistent.jpg';
-        } else {
-            console.log('No test image found');
-        }
+        };
+        
+        img.onerror = () => handleImageError(img);
     });
 }); 
 
@@ -297,27 +310,3 @@ document.addEventListener('keydown', function(e) {
         }
     }
 }); 
-
-function attachErrorHandlers() {
-    document.querySelectorAll('img').forEach(img => {
-        console.log('Attaching error handler to:', img.src); // Debug log
-        img.onerror = () => handleImageError(img);
-    });
-}
-
-// Call it when the page loads
-document.addEventListener('DOMContentLoaded', () => {
-    attachErrorHandlers();
-});
-
-// Test 3: Attach to all images
-function attachErrorHandlers() {
-    const images = document.querySelectorAll('.project-images img');
-    images.forEach(img => {
-        console.log('Test 3: Attaching handler to:', img.src);
-        img.onerror = () => handleImageError(img);
-    });
-}
-
-// Test immediately after DOM loads
-document.addEventListener('DOMContentLoaded', attachErrorHandlers);
